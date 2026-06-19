@@ -1,0 +1,384 @@
+/* CSS Stylesheet - Moment 2: Webpage Structure & Prototype */
+/* Palette: Nature & Technology (Soft Sage, Deep Forest Green, Slate Grey) */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f7f9f6;
+    color: #2d3748;
+}
+
+/* Header & Navigation */
+header {
+    background: linear-gradient(135deg, #1e4620, #2e6f40);
+    color: #ffffff;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Contenedor con Flexbox para colocar el logo a la izquierda */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Mantiene todo el bloque centrado en la pantalla */
+    gap: 20px;               /* Espacio de separación entre el logo y los textos */
+    margin-bottom: 25px;     /* Espacio de separación con el menú de navegación */
+}
+
+/* Alineación del bloque de textos */
+.header-text {
+    text-align: left;        /* Hace que el título y subtítulo se alineen a la izquierda junto al logo */
+}
+
+header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 4px;
+    font-weight: 700;
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 0;        /* Se remueve el margen viejo para controlar el flujo con el contenedor */
+}
+
+/* Estilo del Logo */
+.header-logo {
+    width: 80px;             /* Tamaño adaptado para pantallas de computadora */
+    height: auto;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+}
+
+/* ==========================================================================
+   Ajuste Responsivo (Añadir dentro de @media (max-width: 768px))
+   ========================================================================== */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column; /* En celulares, el logo se posiciona arriba y el texto se centra automáticamente */
+        gap: 10px;
+    }
+    
+    .header-text {
+        text-align: center;
+    }
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    border-radius: 30px;
+    display: inline-flex;
+}
+
+#contacto h2{
+    text-align: center;
+}
+
+#contacto p {
+    text-align: center;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 6px 12px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #ffffff;
+    color: #2e6f40;
+}
+
+/* Main Content Layout */
+main {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Sections */
+section {
+    background-color: #ffffff;
+    padding: 35px;
+    margin-bottom: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    border-left: 5px solid #2e6f40;
+}
+
+section h2 {
+    color: #1e4620;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+/* Problem Section Articles - Stacked layout */
+#problema article {
+    margin-bottom: 25px;
+}
+
+#problema article h3 {
+    color: #2d3748;
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+#problema ul {
+    margin-left: 20px;
+    padding-left: 10px;
+}
+
+#problema li {
+    margin-bottom: 10px;
+}
+
+/* Solutions Section - Grid Layout */
+#soluciones {
+    display: block;
+}
+
+#soluciones img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    border: 1px solid #e2e8f0;
+}
+
+/* Container for solutions cards using Grid */
+.solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.solutions-grid article {
+    background-color: #f8fafc;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.solutions-grid article:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+}
+
+.solutions-grid article h3 {
+    color: #2e6f40;
+    margin-bottom: 10px;
+    font-size: 1.15rem;
+}
+
+/* Multimedia & Audio Player */
+#multimedia audio {
+    width: 100%;
+    max-width: 500px;
+    margin-top: 15px;
+}
+
+/* Bitacora Section */
+#bitacora article {
+    background-color: #fafbfc;
+    padding: 15px 20px;
+    margin-top: 15px;
+    border-radius: 6px;
+    border-left: 3px solid #cbd5e1;
+}
+
+#bitacora h3 {
+    font-size: 1.1rem;
+    color: #4a5568;
+    margin-bottom: 5px;
+}
+
+/* Contact Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 30px auto 0 auto; /* El 'auto' a los lados centra el formulario horizontalmente */
+    text-align: left;         /* Mantiene los textos de las etiquetas alineados a la izquierda dentro del formulario */
+}
+
+form label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #4a5568;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border-color: #2e6f40;
+    box-shadow: 0 0 0 3px rgba(46, 111, 64, 0.15);
+}
+
+form button {
+    background-color: #2e6f40;
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: background-color 0.2s ease;
+}
+
+form button:hover {
+    background-color: #1e4620;
+}
+
+/* Footer */
+footer {
+    background-color: #2d3748;
+    color: #a0aec0;
+    text-align: center;
+    padding: 25px 20px;
+    font-size: 0.9rem;
+    margin-top: 6px;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    section {
+        padding: 20px;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        border-radius: 10px;
+        align-items: center;
+    }
+    
+    form button {
+        width: 100%;
+    }
+}
+
+/* ==========================================================================
+   Bitacora Section Styles - Multi-column Layout
+   ========================================================================== */
+
+/* Contenedor Grid que obliga a colocar la Bitácora 1 y la Bitácora 2 lado a lado */
+.logbook-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Divide el espacio exactamente en 2 columnas iguales */
+    gap: 30px;
+    margin-top: 25px;
+    align-items: start;
+}
+
+/* Bloque independiente de cada bitácora (columna) */
+.logbook-block {
+    background-color: #fafbfc;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+
+.logbook-block h3 {
+    font-size: 1.3rem;
+    color: #1e4620;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #cbd5e1;
+}
+
+/* Artículos internos dentro de cada bitácora */
+#bitacora article {
+    background-color: #ffffff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #edf2f7;
+    border-left: 4px solid #cbd5e1;
+    box-shadow: none; 
+}
+
+#bitacora article:last-child {
+    margin-bottom: 0;
+}
+
+#bitacora h4 {
+    font-size: 1.05rem;
+    color: #2e6f40;
+    margin-bottom: 8px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+#bitacora p {
+    font-size: 0.95rem;
+    color: #2d3748;
+    line-height: 1.6;
+}
+
+/* Nuevo estilo para el Logo del Header */
+.header-logo {
+    width: 75px; /* Define un tamaño adecuado y equilibrado */
+    height: auto; /* Mantiene la proporción original de la imagen */
+    margin-bottom: 12px; /* Espacio de separación con el título h1 */
+    display: inline-block; /* Permite que se centre automáticamente gracias al text-align: center del header */
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15)); /* Le da un realce sutil sobre el gradiente verde */
+}
+
+#bitacora code {
+    background-color: #edf2f7;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.85rem;
+    color: #1e4620;
+    font-weight: 600;
+}
+
+/* Ajuste responsivo: solo pasa a una columna en pantallas móviles (menores a 768px) */
+@media (max-width: 768px) {
+    .logbook-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
